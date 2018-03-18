@@ -36,7 +36,6 @@ class EventBot(val config: EventBotConfig) {
                 .setStatus(OnlineStatus.ONLINE)
                 .setGame(Game.playing("EwaldBot v 1.0"))
                 .setAudioEnabled(false)
-
                 .buildBlocking()
         commandManager.add(HelpCommand(this))
         commandManager.add(ChannelCommand(this))
