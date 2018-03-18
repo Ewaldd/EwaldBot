@@ -5,6 +5,7 @@ import net.dv8tion.jda.core.JDA
 import net.dv8tion.jda.core.JDABuilder
 import net.dv8tion.jda.core.OnlineStatus
 import net.dv8tion.jda.core.entities.Game
+import pl.fcraft.event.bot.command.BotCommand
 import pl.fcraft.event.bot.command.ChannelCommand
 import pl.fcraft.event.bot.command.HelpCommand
 import pl.fcraft.event.bot.command.UserCommand
@@ -34,12 +35,13 @@ class EventBot(val config: EventBotConfig) {
                 .setAudioEnabled(false)
                 .setAutoReconnect(true)
                 .setStatus(OnlineStatus.ONLINE)
-                .setGame(Game.playing("EwaldBot v 1.0"))
+                .setGame(Game.playing("Wpisz !help"))
                 .setAudioEnabled(false)
                 .buildBlocking()
         commandManager.add(HelpCommand(this))
         commandManager.add(ChannelCommand(this))
         commandManager.add(UserCommand(this))
+        commandManager.add(BotCommand(this))
         running = true
     }
 

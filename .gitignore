@@ -1,1 +1,2 @@
 Java.gitignore
+src/main/kotlin/pl/fcraft/event/bot/config/EventBotConfig.kt
