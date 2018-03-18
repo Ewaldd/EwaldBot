@@ -28,13 +28,23 @@
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/config/EventBotConfig.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+              <caret line="5" column="76" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="76" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChannelCommand.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventBot.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/EventBot.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChannelCommand.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/ChannelCommand.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -89,15 +99,15 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/util/Main.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/util/StatusCommand.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/StatusCommand.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/EventBot.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/util/Command.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/xewald/command/UserCommand.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/xewald/ewald/bot/config/EventBotConfig.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/xewald/ewald/bot/EventBotApplication.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/config/EventBotConfig.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/UserCommand.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/HelpCommand.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/ChannelCommand.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/config/EventBotConfig.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/EventBot.kt" />
       </list>
     </option>
   </component>
@@ -355,16 +365,15 @@
       <workItem from="1521308953626" duration="6738000" />
       <workItem from="1521322566818" duration="3038000" />
       <workItem from="1521327025519" duration="1669000" />
-      <workItem from="1521391910365" duration="4742000" />
+      <workItem from="1521391910365" duration="5364000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49695000" />
+    <option name="totallyTimeSpent" value="50317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -660,14 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/EventBot.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/util/EmbedUtil.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -708,14 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/config/EventBotConfig.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/HelpCommand.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -738,6 +731,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/config/EventBotConfig.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="76" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/EventBot.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
           <folding />
         </state>
       </provider>

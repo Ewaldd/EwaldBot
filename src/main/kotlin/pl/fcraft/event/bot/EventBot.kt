@@ -40,7 +40,7 @@ class EventBot(val config: EventBotConfig) {
                 .buildBlocking()
         commandManager.add(HelpCommand(this))
         commandManager.add(ChannelCommand(this))
-        commandManager.add(UserCommand  (this))
+        commandManager.add(UserCommand(this))
         running = true
     }
 
