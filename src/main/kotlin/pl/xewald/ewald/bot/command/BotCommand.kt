@@ -3,14 +3,14 @@ package pl.xewald.ewald.bot.command
 import net.dv8tion.jda.core.EmbedBuilder
 import net.dv8tion.jda.core.entities.Member
 import net.dv8tion.jda.core.entities.MessageChannel
-import pl.xewald.ewald.bot.EventBot
+import pl.xewald.ewald.bot.EwaldBot
 import pl.xewald.ewald.bot.command.util.Command
 import java.awt.Color
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
-class BotCommand(val bot: EventBot) : Command(
+class BotCommand(val bot: EwaldBot) : Command(
         "bot",
         "Informacje o bocie",
         listOf("pomoc")
@@ -22,8 +22,9 @@ class BotCommand(val bot: EventBot) : Command(
         val eb = EmbedBuilder()
         eb.setTitle("Informacje o bocie", null)
         eb.setColor(Color.BLUE)
-        eb.addField("Autor bota:", "Ewald#1796", true)
+        eb.addField("Autor bota:", "**Ewald#1796**", true)
         eb.addField("Github bota:", "https://github.com/Ewaldd/EwaldBot", true)
+        eb.addField("Wersja bota:", "**1.0**", true)
         eb.setAuthor("EwaldBot", "https://xewald.pl/", "https://xewald.pl/Ewald.gif")
         eb.setFooter("Data i godzina: $formatted", "https://xewald.pl/Ewald.gif")
         channel.sendMessage(eb.build()).queue()

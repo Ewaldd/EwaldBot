@@ -7,11 +7,11 @@ import net.dv8tion.jda.core.OnlineStatus
 import net.dv8tion.jda.core.entities.Game
 import pl.xewald.ewald.bot.command.*
 import pl.xewald.ewald.bot.command.util.CommandManager
-import pl.xewald.ewald.bot.config.EventBotConfig
+import pl.xewald.ewald.bot.config.EwaldBotConfig
 import pl.xewald.ewald.bot.listener.*
 import pl.xewald.ewald.bot.util.EventBotException
 
-class EventBot(val config: EventBotConfig) {
+class EwaldBot(val config: EwaldBotConfig) {
 
     lateinit var jda: JDA
         private set
@@ -31,7 +31,7 @@ class EventBot(val config: EventBotConfig) {
                 .setAudioEnabled(false)
                 .setAutoReconnect(true)
                 .setStatus(OnlineStatus.ONLINE)
-                .setGame(Game.playing("Wpisz !help"))
+                .setGame(Game.playing("Wpisz !help | v 1.0"))
                 .setAudioEnabled(false)
                 .buildBlocking()
         commandManager.add(HelpCommand(this))
