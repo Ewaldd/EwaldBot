@@ -4,7 +4,7 @@ import net.dv8tion.jda.core.entities.*
 import net.dv8tion.jda.core.events.channel.text.TextChannelCreateEvent
 import net.dv8tion.jda.core.events.user.UserAvatarUpdateEvent
 import net.dv8tion.jda.core.events.user.UserNameUpdateEvent
-import pl.xewald.ewald.bot.EwaldBot
+import pl.xewald.ewald.bot.Main
 import pl.xewald.ewald.bot.command.util.Command;
 import net.dv8tion.jda.core.EmbedBuilder;
 import java.awt.Color;
@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 import java.util.*
 
-class UserCommand(val bot: EwaldBot) : Command(
+class UserCommand(val bot: Main) : Command(
         "user",
         "Podstawowe informacje o Twoim koncie",
         listOf("pomoc")

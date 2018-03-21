@@ -4,12 +4,12 @@ import net.dv8tion.jda.core.entities.*
 import net.dv8tion.jda.core.events.channel.text.TextChannelCreateEvent
 import net.dv8tion.jda.core.events.user.UserNameUpdateEvent
 import org.w3c.dom.css.RGBColor
-import pl.xewald.ewald.bot.EwaldBot
+import pl.xewald.ewald.bot.Main
 import pl.xewald.ewald.bot.command.util.Command
 import pl.xewald.ewald.bot.util.basicEmbedBuilder
 import java.awt.Color
 
-class HelpCommand(val bot: EwaldBot) : Command(
+class HelpCommand(val bot: Main) : Command(
         "help",
         "Pomoc.",
         listOf("pomoc")

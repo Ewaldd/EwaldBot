@@ -6,15 +6,14 @@ import net.dv8tion.jda.core.events.channel.text.TextChannelCreateEvent
 import net.dv8tion.jda.core.events.user.UserAvatarUpdateEvent
 import net.dv8tion.jda.core.events.user.UserNameUpdateEvent
 import net.dv8tion.jda.core.entities.User
-import pl.xewald.ewald.bot.EwaldBot
+import pl.xewald.ewald.bot.Main
 import pl.xewald.ewald.bot.command.util.Command
-import pl.xewald.ewald.bot.util.basicEmbedBuilder
 import java.awt.Color
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
-class ChannelCommand(val bot: EwaldBot) : Command(
+class ChannelCommand(val bot: Main) : Command(
         "channel",
         "Sprawdz informacje o kanale",
         listOf("pomoc")

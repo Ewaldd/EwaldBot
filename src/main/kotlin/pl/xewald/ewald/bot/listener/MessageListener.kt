@@ -3,9 +3,9 @@ package pl.xewald.ewald.bot.listener
 import net.dv8tion.jda.core.entities.Channel
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent
 import net.dv8tion.jda.core.hooks.ListenerAdapter
-import pl.xewald.ewald.bot.EwaldBot
+import pl.xewald.ewald.bot.Main
 
-class MessageListener(val bot: EwaldBot) : ListenerAdapter() {
+class MessageListener(val bot: Main) : ListenerAdapter() {
 
     override fun onMessageReceived(event: MessageReceivedEvent) {
         var message = event.message.contentRaw!!
