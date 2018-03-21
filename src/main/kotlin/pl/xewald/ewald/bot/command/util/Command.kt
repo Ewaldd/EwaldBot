@@ -1,6 +1,7 @@
 package pl.xewald.ewald.bot.command.util
 
 import net.dv8tion.jda.core.entities.Member
+import net.dv8tion.jda.core.entities.Message
 import net.dv8tion.jda.core.entities.MessageChannel
 
 
@@ -10,7 +11,6 @@ abstract class Command(
         val aliases: List<String>
 ) {
 
-    abstract fun execute(member: Member?, channel: MessageChannel, args: Array<String>)
-
+    abstract fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>)
 
 }
