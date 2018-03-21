@@ -2,20 +2,21 @@ package pl.xewald.ewald.bot.command
 
 import net.dv8tion.jda.core.EmbedBuilder
 import net.dv8tion.jda.core.entities.Member
+import net.dv8tion.jda.core.entities.Message
 import net.dv8tion.jda.core.entities.MessageChannel
-import pl.xewald.ewald.bot.Main
+import pl.xewald.ewald.bot.EwaldBot
 import pl.xewald.ewald.bot.command.util.Command
 import java.awt.Color
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
-class BotCommand(val bot: Main) : Command(
+class BotCommand(val bot: EwaldBot) : Command(
         "bot",
         "Informacje o bocie",
         listOf("pomoc")
 ) {
-    override fun execute(member: Member?, channel: MessageChannel, args: Array<String>) {
+    override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
         val formatted = current.format(formatter)

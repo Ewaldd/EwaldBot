@@ -5,14 +5,13 @@ import net.dv8tion.jda.core.JDA
 import net.dv8tion.jda.core.JDABuilder
 import net.dv8tion.jda.core.OnlineStatus
 import net.dv8tion.jda.core.entities.Game
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent
 import pl.xewald.ewald.bot.command.*
 import pl.xewald.ewald.bot.command.util.CommandManager
 import pl.xewald.ewald.bot.config.EwaldBotConfig
 import pl.xewald.ewald.bot.listener.*
 import pl.xewald.ewald.bot.util.EventBotException
 
-class Main(val config: EwaldBotConfig) {
+class EwaldBot(val config: EwaldBotConfig) {
 
     lateinit var jda: JDA
         private set
