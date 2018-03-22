@@ -15,13 +15,10 @@ class ChannelCommand(val bot: EwaldBot) : Command(
         listOf("pomoc")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
-<<<<<<< HEAD
         if (member == null) {
             channel.sendMessage("Ta komenda dostepna jest tylko na serwerach!").queue()
             return
         }
-=======
->>>>>>> 4ba9fc04f1059113aa9e31a308cba7ee257b0f19
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
         val formatted = current.format(formatter)

@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="EventBot" />
+        <module name="EwaldBot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="EventBot" target="1.8" />
+      <module name="EwaldBot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

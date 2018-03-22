@@ -16,18 +16,15 @@ class UserCommand(val bot: EwaldBot) : Command(
         listOf("pomoc")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
-<<<<<<< HEAD
+
         if (member == null) {
             channel.sendMessage("Ta komenda dostepna jest tylko na serwerach!").queue()
             return
         }
-=======
->>>>>>> 4ba9fc04f1059113aa9e31a308cba7ee257b0f19
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
         val formatted = current.format(formatter)
         val eb = EmbedBuilder()
-<<<<<<< HEAD
         if (args.size == 0) {
 
 
@@ -41,7 +38,6 @@ class UserCommand(val bot: EwaldBot) : Command(
             channel.sendMessage(eb.build()).queue()
         } else {
         }
-=======
         eb.setTitle("Informacje o Tobie", null)
         eb.setColor(Color.darkGray)
         eb.setDescription(" **Twoje rangi:** ${member!!.roles} \n**Twój Tag:** #${member.user.discriminator}\n**Data założenia Discorda:** ${member.user.creationTime.toLocalDate()}\n**Twój status:** ${member.onlineStatus}\n**Aktualna gra:** ${member.game}\n**Data dołączenia do serwera:** ${member.joinDate.toLocalDate()}")
@@ -50,6 +46,5 @@ class UserCommand(val bot: EwaldBot) : Command(
         eb.setFooter("Data i godzina: $formatted", "https://xewald.pl/Ewald.gif")
         eb.setImage(member.user.avatarUrl)
         channel.sendMessage(eb.build()).queue()
->>>>>>> 4ba9fc04f1059113aa9e31a308cba7ee257b0f19
     }
 }
