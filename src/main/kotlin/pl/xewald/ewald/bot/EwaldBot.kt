@@ -31,14 +31,14 @@ class EwaldBot(val config: EwaldBotConfig) {
                 .setAudioEnabled(false)
                 .setAutoReconnect(true)
                 .setStatus(OnlineStatus.ONLINE)
-                .setGame(Game.playing("Wpisz !help | v 1.0"))
+                .setGame(Game.streaming("Wpisz !help | v 1.0", "https://www.twitch.tv/boleknowak"))
                 .setAudioEnabled(false)
                 .buildBlocking()
         commandManager.add(HelpCommand(this))
         commandManager.add(ChannelCommand(this))
         commandManager.add(UserCommand(this))
         commandManager.add(BotCommand(this))
-        commandManager.add(SurveyCommand(this))
+        commandManager.add(AdCommand(this))
         running = true
     }
 

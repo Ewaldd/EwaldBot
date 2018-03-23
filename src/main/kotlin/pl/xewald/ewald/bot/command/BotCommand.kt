@@ -21,6 +21,7 @@ class BotCommand(val bot: EwaldBot) : Command(
         val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
         val formatted = current.format(formatter)
         val eb = EmbedBuilder()
+
         eb.setTitle("Informacje o bocie", null)
         eb.setColor(member!!.color)
         eb.addField("Autor bota:", "**Ewald#1796**", true)

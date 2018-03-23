@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EventBot.iml" filepath="$PROJECT_DIR$/EventBot.iml" />
       <module fileurl="file://$PROJECT_DIR$/EwaldBot.iml" filepath="$PROJECT_DIR$/EwaldBot.iml" />
     </modules>
   </component>

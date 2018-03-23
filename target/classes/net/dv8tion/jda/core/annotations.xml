@@ -1,0 +1,5 @@
+<root>
+    <item name='net.dv8tion.jda.core.EmbedBuilder'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
