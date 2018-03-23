@@ -25,7 +25,7 @@ class AdCommand(val bot: EwaldBot) : Command(
             channel.sendMessage("Ta komenda zadziała tylko na serwerach.").queue()
             return
         }
-        if (member.hasPermission(Permission.MESSAGE_MANAGE) || member.user.name == "Ewald" || member.user.name == "boleknowak" || member.user.name == "Ixidi") {
+        if (member.hasPermission(Permission.MESSAGE_MANAGE) || member.user.name == "Ewald"){
             if (args.size == 0) {
                 channel.sendMessage("Nie podałeś treści ogłoszenia!").queue()
                 return

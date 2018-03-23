@@ -17,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdCommand.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdCommand.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/xewald/ewald/bot/command/AdCommand.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="91" lean-forward="false" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
+            <state relative-caret-position="408">
+              <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
               <folding>
                 <element signature="e#37#472#0" expanded="true" />
               </folding>
@@ -29,11 +29,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1663">
               <caret line="15" column="57" lean-forward="false" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EwaldBot.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EwaldBot.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -170,9 +180,9 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/xewald/ewald/bot/command/SurveyCommand.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/xewald/ewald/bot/command/util/AdCommand.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/xewald/ewald/bot/command/BotCommand.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/pl/xewald/ewald/bot/command/AdCommand.kt" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/kotlin/pl/xewald/ewald/bot/EwaldBot.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/pl/xewald/ewald/bot/command/AdCommand.kt" />
       </list>
     </option>
   </component>
@@ -506,12 +516,12 @@
       <workItem from="1521823694830" duration="7102000" />
       <workItem from="1521834999704" duration="785000" />
       <workItem from="1521836262568" duration="241000" />
-      <workItem from="1521836577075" duration="2356000" />
+      <workItem from="1521836577075" duration="2883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99820000" />
+    <option name="totallyTimeSpent" value="100347000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -603,7 +613,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/util/CommandManager.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/util/StatusCommand.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/StatusCommand.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/fcraft/event/bot/command/util/Command.kt" />
@@ -806,21 +815,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/xewald/ewald/bot/command/AdCommand.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="91" lean-forward="false" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
-          <folding>
-            <element signature="e#37#472#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1663">
           <caret line="15" column="57" lean-forward="false" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EwaldBot.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pl/xewald/ewald/bot/command/AdCommand.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" column="92" lean-forward="false" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
+          <folding>
+            <element signature="e#37#472#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
