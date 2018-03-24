@@ -6,6 +6,7 @@ import net.dv8tion.jda.core.JDABuilder
 import net.dv8tion.jda.core.OnlineStatus
 import net.dv8tion.jda.core.entities.Game
 import pl.xewald.ewald.bot.command.*
+import pl.xewald.ewald.bot.command.gamecommand.ServerCommand
 import pl.xewald.ewald.bot.command.util.CommandManager
 import pl.xewald.ewald.bot.config.EwaldBotConfig
 import pl.xewald.ewald.bot.listener.*
@@ -39,6 +40,7 @@ class EwaldBot(val config: EwaldBotConfig) {
         commandManager.add(UserCommand(this))
         commandManager.add(BotCommand(this))
         commandManager.add(AdCommand(this))
+        commandManager.add(ServerCommand(this))
         running = true
     }
 

@@ -33,10 +33,12 @@ class AdCommand(val bot: EwaldBot) : Command(
                 var ad = ""
                 for (arg in args) ad += arg + " "
                 val eb = EmbedBuilder()
+                val latest = channel.latestMessageId
                 eb.setTitle("Ogłoszenie")
                 eb.setDescription(ad)
                 eb.setColor(Color.RED)
                 eb.setFooter("${member.user.name}, $formatted", "${member.user.avatarUrl}")
+                channel.deleteMessageById(latest).queue()
                 channel.sendMessage(eb.build()).queue()
             }
         }else{

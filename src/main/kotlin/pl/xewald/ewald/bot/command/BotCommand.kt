@@ -24,7 +24,7 @@ class BotCommand(val bot: EwaldBot) : Command(
 
         eb.setTitle("Informacje o bocie", null)
         eb.setColor(member!!.color)
-        eb.addField("Autor bota:", "**Ewald#1796**", true)
+        eb.addField("Autorzy bota:", "**Ewald#1796 i Ixidi#2813**", true)
         eb.addField("Wersja bota:", "**1.0**", true)
         eb.addField("Sponsor bota:", "**bvcz#5371**", true)
         eb.addField("Github bota:", "[Przejdź](https://github.com/Ewaldd/EwaldBot)", true)
