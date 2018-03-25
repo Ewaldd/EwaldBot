@@ -25,24 +25,17 @@ class ServerCommand(val bot: EwaldBot) : Command(
         val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
         val formatted = current.format(formatter)
         if (args.size == 1) {
-            var name = ""
-            for (arg in args) name += arg + " "
-            if (name.contains('.')) {
-                val ip = khttp.get("https://mcapi.us/server/status?ip=$name")
-                val obj: JSONObject = ip.jsonObject
-                if (obj.get("status") == "success") {
-                    if (obj.getJSONObject("server").get("name") != "") {
-                        val eb = EmbedBuilder()
-                        eb.setAuthor("Informacje o serwerze: $name")
-                        eb.setDescription("Status: Online")
-                        eb.addField("Motd:", "${obj.get("motd")}", true)
-                        eb.addField("Graczy:", "${obj.getJSONObject("players").get("now")} / ${obj.getJSONObject("players").get("max")}", true)
-                        eb.addField("Wersja:", "${obj.getJSONObject("server").get("name")}", true)
-                        eb.setFooter("EwaldBot, $formatted", "https://xewald.pl/Ewald.gif")
-                        channel.sendMessage(eb.build()).queue()
-                    }else{
-                        channel.sendMessage("Na podanym IP nie znajduje się żaden serwer minecraft.").queue()
-                    }
+            if (args[0].contains('.')) {
+                val obj: JSONObject = khttp.get("https://api.skript.pl/server/${args[0]}/").jsonObject
+                if (obj.get("online") == true) {
+                    val eb = EmbedBuilder()
+                    eb.setAuthor("Informacje o serwerze: ${args[0]}")
+                    eb.setDescription("Status: Online")
+                    eb.addField("Motd:", "${obj.get("description")}", true)
+                    eb.addField("Graczy:", "${obj.getJSONObject("players").get("online")} / ${obj.getJSONObject("players").get("max")}", true)
+                    eb.addField("Wersja:", "${obj.getJSONObject("version").get("name")}", true)
+                    eb.setFooter("EwaldBot, $formatted ", "https://xewald.pl/Ewald.gif")
+                    channel.sendMessage(eb.build()).queue()
                 } else {
                     channel.sendMessage("Poprawne użycie: !serwer <adres serwera>").queue()
                 }
