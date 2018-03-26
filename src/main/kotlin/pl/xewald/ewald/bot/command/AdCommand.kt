@@ -37,13 +37,12 @@ class AdCommand(val bot: EwaldBot) : Command(
                 eb.setTitle("Ogłoszenie")
                 eb.setDescription(ad)
                 eb.setColor(Color.RED)
-                eb.setFooter("${member.user.name}, $formatted", "${member.user.avatarUrl}")
+                eb.setFooter("${member.user.name}, $formatted", member.user.avatarUrl)
                 channel.deleteMessageById(latest).queue()
                 channel.sendMessage(eb.build()).queue({ success ->
                     run {
                         if (!success.member.hasPermission(Permission.MESSAGE_ADD_REACTION)) {
                             return@queue
-
                         }
                         success.addReaction("\uD83D\uDC4D").queue(
                                 { _ ->
@@ -53,6 +52,8 @@ class AdCommand(val bot: EwaldBot) : Command(
                                                         { _ -> success.addReaction("\uD83E\uDD80").queue() }
                                                 )
                                             }
+
+
                                     )
                                 }
                         )
