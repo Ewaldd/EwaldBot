@@ -37,9 +37,24 @@ class AdCommand(val bot: EwaldBot) : Command(
                 eb.setTitle("Ogłoszenie")
                 eb.setDescription(ad)
                 eb.setColor(Color.RED)
-                eb.setFooter("${member.user.name}, $formatted", "${member.user.avatarUrl}")
+                eb.setFooter("${member.user.name}, $formatted", member.user.avatarUrl)
                 channel.deleteMessageById(latest).queue()
-                channel.sendMessage(eb.build()).queue()
+                channel.sendMessage(eb.build()).queue({success ->
+                    run {
+                        if (!success.member.hasPermission(Permission.MESSAGE_ADD_REACTION)) {
+                            return@queue
+                        }
+                        success.addReaction(":thumbsup:").queue(
+                                { _ -> success.addReaction(":heart:").queue(
+                                        { _ -> success.addReaction(":heart:").queue(
+                                                { _ -> success.addReaction(":sob:").queue(
+                                                        { _ -> success.addReaction(":crab:").queue()}
+                                                )}
+                                        )}
+                                )}
+                        )
+                    }
+                })
             }
         }else{
             channel.sendMessage("Nie masz uprawnień do tego!").queue()
