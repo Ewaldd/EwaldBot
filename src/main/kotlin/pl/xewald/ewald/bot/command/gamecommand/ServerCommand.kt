@@ -37,7 +37,7 @@ class ServerCommand(val bot: EwaldBot) : Command(
                     eb.setFooter("EwaldBot, $formatted ", "https://xewald.pl/Ewald.gif")
                     channel.sendMessage(eb.build()).queue()
                 } else {
-                    channel.sendMessage("Poprawne użycie: !serwer <adres serwera>").queue()
+                    channel.sendMessage("Na podanym IP nie ma działającego serwerra").queue()
                 }
             } else {
                 channel.sendMessage("Poprawne użycie: !serwer <adres serwera>").queue()
