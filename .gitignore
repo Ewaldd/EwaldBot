@@ -1,2 +1,5 @@
 Java.gitignore
-src/main/kotlin/pl/fcraft/event/bot/config/EventBotConfig.kt
+src/main/kotlin/pl/xewald/ewald/bot/config/EventBotConfig.kt
+target/
+classes/
+.idea/
