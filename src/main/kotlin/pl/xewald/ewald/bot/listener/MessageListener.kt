@@ -1,5 +1,6 @@
 package pl.xewald.ewald.bot.listener
 
+import kotlinx.coroutines.experimental.async
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent
 import net.dv8tion.jda.core.hooks.ListenerAdapter
 import pl.xewald.ewald.bot.EwaldBot
@@ -16,7 +17,9 @@ class MessageListener(val bot: EwaldBot) : ListenerAdapter() {
         if (splited.size > 1) {
             args = Array(splited.size - 1) { i -> splited[i + 1] }
         }
-        command!!.execute(event.member, event.channel, event.message, args)
+        async {
+            command!!.execute(event.member, event.channel, event.message, args)
+        }
     }
 
 }
