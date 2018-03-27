@@ -1,10 +1,11 @@
 package pl.xewald.ewald.bot.command
 
 import net.dv8tion.jda.core.EmbedBuilder
-import net.dv8tion.jda.core.entities.*
+import net.dv8tion.jda.core.entities.Member
+import net.dv8tion.jda.core.entities.Message
+import net.dv8tion.jda.core.entities.MessageChannel
 import pl.xewald.ewald.bot.EwaldBot
 import pl.xewald.ewald.bot.command.util.Command
-import java.awt.Color
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
@@ -23,9 +24,13 @@ class ChannelCommand(val bot: EwaldBot) : Command(
         val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
         val formatted = current.format(formatter)
         val eb = EmbedBuilder()
-        eb.setTitle("Informacje o kanale ${channel.name}", null)
+        eb.setTitle("Informacje o kanale #${channel.name}", null)
         eb.setColor(member.color)
-        eb.setDescription("ID kanału: ${channel.id}\nID ostatniej wiadomości: ${channel.latestMessageId}\nData założenia kanału: ${channel.creationTime.toLocalDate()}")
+        eb.setDescription(
+                "ID kanału: ${channel.id}\n" +
+                "ID ostatniej wiadomości: ${channel.latestMessageId}\n" +
+                "Przypięte wiadomości: ${channel.pinnedMessages.complete().size}\n" +
+                "Data założenia kanału: ${channel.creationTime.toLocalDate()}")
         eb.setAuthor("EwaldBot", "https://xewald.pl/", "https://xewald.pl/Ewald.gif")
         eb.setFooter("Data i godzina: $formatted", null)
         channel.sendMessage(eb.build()).queue()

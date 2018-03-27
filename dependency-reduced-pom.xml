@@ -5,6 +5,7 @@
   <artifactId>EwaldBot</artifactId>
   <version>1.0</version>
   <build>
+    <sourceDirectory>src/main/kotlin</sourceDirectory>
     <resources>
       <resource>
         <filtering>true</filtering>
@@ -19,27 +20,25 @@
         <executions>
           <execution>
             <id>compile</id>
+            <phase>compile</phase>
             <goals>
               <goal>compile</goal>
             </goals>
-            <configuration>
-              <sourceDirs>
-                <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
-              </sourceDirs>
-            </configuration>
           </execution>
           <execution>
             <id>test-compile</id>
+            <phase>test-compile</phase>
             <goals>
               <goal>test-compile</goal>
             </goals>
-            <configuration>
-              <sourceDirs>
-                <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
-              </sourceDirs>
-            </configuration>
           </execution>
         </executions>
+        <configuration>
+          <jvmTarget>1.8</jvmTarget>
+          <args>
+            <arg>-Xcoroutines=enable</arg>
+          </args>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>

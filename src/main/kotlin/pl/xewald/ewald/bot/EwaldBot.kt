@@ -7,11 +7,11 @@ import net.dv8tion.jda.core.OnlineStatus
 import net.dv8tion.jda.core.entities.Game
 import pl.xewald.ewald.bot.command.*
 import pl.xewald.ewald.bot.command.gamecommand.HiveMCPlayerCommand
-import pl.xewald.ewald.bot.command.gamecommand.IllegalCommand
 import pl.xewald.ewald.bot.command.gamecommand.ServerCommand
 import pl.xewald.ewald.bot.command.util.CommandManager
 import pl.xewald.ewald.bot.config.EwaldBotConfig
-import pl.xewald.ewald.bot.listener.*
+import pl.xewald.ewald.bot.listener.JoinListener
+import pl.xewald.ewald.bot.listener.MessageListener
 import pl.xewald.ewald.bot.util.EventBotException
 
 class EwaldBot(val config: EwaldBotConfig) {
@@ -34,8 +34,7 @@ class EwaldBot(val config: EwaldBotConfig) {
                 .setAudioEnabled(false)
                 .setAutoReconnect(true)
                 .setStatus(OnlineStatus.ONLINE)
-                .setGame(Game.streaming("Wpisz !help | v 1.0", "https://www.twitch.tv/boleknowak"))
-                .setAudioEnabled(false)
+                .setGame(Game.streaming("Wpisz !help | v1.1", "https://www.twitch.tv/boleknowak"))
                 .buildBlocking()
         commandManager.add(HelpCommand(this))
         commandManager.add(ChannelCommand(this))
@@ -45,6 +44,7 @@ class EwaldBot(val config: EwaldBotConfig) {
         commandManager.add(AdCommand(this))
         commandManager.add(ServerCommand(this))
         commandManager.add(HiveMCPlayerCommand(this))
+        commandManager.add(IllegalCommand(this))
         running = true
     }
 
