@@ -57,7 +57,7 @@ class UserCommand(val bot: EwaldBot) : Command(
             else user.roles.joinToString(", ") { role -> "${role.name} (${role.id})" }
         eb.setDescription(
                 "**Role:** $roles\n" +
-                "**Tag:** #${member.user.discriminator}\n" +
+                "**Tag:** #${user.user.discriminator}\n" +
                 "**Data założenia konta:** ${user.user.creationTime.toLocalDate()}\n" +
                 "**Status:** ${statusLangMap[user.onlineStatus]}\n" +
                 if (user.game != null) "**Aktualna gra:** $gameData\n" else "" +

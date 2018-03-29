@@ -45,6 +45,7 @@ class EwaldBot(val config: EwaldBotConfig) {
         commandManager.add(ServerCommand(this))
         commandManager.add(HiveMCPlayerCommand(this))
         commandManager.add(IllegalCommand(this))
+        commandManager.add(WeatherCommand(this))
         running = true
     }
 
