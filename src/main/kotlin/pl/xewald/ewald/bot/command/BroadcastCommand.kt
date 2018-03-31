@@ -12,14 +12,15 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
-class AdCommand(val bot: EwaldBot) : Command(
+class BroadcastCommand(val bot: EwaldBot) : Command(
         "ogloszenie",
         "Napisz ogłoszenie",
         listOf("pomoc")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
+
         val current = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
         val formatted = current.format(formatter)
         if (member == null) {
             channel.sendMessage("Ta komenda zadziała tylko na serwerach.").queue()

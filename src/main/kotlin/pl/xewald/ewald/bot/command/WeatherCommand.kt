@@ -29,11 +29,14 @@ class WeatherCommand(val bot: EwaldBot) : Command(
                     val formattedSunrise = sdf.format(sunrise)
                     val sunset = Date(obj.getJSONObject("sys").getLong("sunset") * 1000L)
                     val formattedSunset = sdf.format(sunset)
+                    val current = LocalDateTime.now()
+                    val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
+                    val formatted = current.format(formatter)
                     val eb = EmbedBuilder()
                     eb.setTitle("Pogoda w ${args[0]}, ${obj.getJSONObject("sys").get("country")}")
                     eb.setAuthor("EwaldBot")
                     eb.setColor(member!!.color)
-                    eb.setFooter("EwaldBot", "https://xewald.pl/Ewald.gif")
+                    eb.setFooter("EwaldBot $formatted", "https://xewald.pl/Ewald.gif")
                     eb.addField("Temperatura:", "${obj.getJSONObject("main").get("temp")} °C", true)
                     eb.addField("Ciśnienie:", "${obj.getJSONObject("main").get("pressure")} hPa", true)
                     eb.addField("Wschod słońca:", "$formattedSunrise", true)
@@ -78,11 +81,12 @@ class WeatherCommand(val bot: EwaldBot) : Command(
                     if (degree > 22.5 && degree < 67.5) {
                         eb.addField("Kierunek wiatru:", "Północno-wschodni", true)
                     }
-                    if(degree <22.5){
+                    if (degree < 22.5) {
                         eb.addField("Kierunek wiatru:", "Północny", true)
                     }
                     eb.setThumbnail("http://openweathermap.org/img/w/${obj.getJSONArray("weather").getJSONObject(0).get("icon")}.png")
                     channel.sendMessage(eb.build()).queue()
+                    channel.sendMessage("sasdasd").queue()
                 } else {
                     channel.sendMessage("${member!!.asMention}, miasto **${args[0]}** nie istnieje!").queue()
                 }

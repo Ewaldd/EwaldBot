@@ -1,5 +1,6 @@
 package pl.xewald.ewald.bot
 
+import kotlinx.coroutines.experimental.channels.BroadcastChannel
 import net.dv8tion.jda.core.AccountType
 import net.dv8tion.jda.core.JDA
 import net.dv8tion.jda.core.JDABuilder
@@ -41,11 +42,12 @@ class EwaldBot(val config: EwaldBotConfig) {
         commandManager.add(IllegalCommand(this))
         commandManager.add(UserCommand(this))
         commandManager.add(BotCommand(this))
-        commandManager.add(AdCommand(this))
+        commandManager.add(BroadcastCommand(this))
         commandManager.add(ServerCommand(this))
         commandManager.add(HiveMCPlayerCommand(this))
         commandManager.add(IllegalCommand(this))
         commandManager.add(WeatherCommand(this))
+        commandManager.add(PollCommand(this))
         running = true
     }
 

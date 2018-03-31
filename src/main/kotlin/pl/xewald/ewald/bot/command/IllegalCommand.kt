@@ -38,8 +38,9 @@ class IllegalCommand(val bot: EwaldBot) : Command(
             if (r.text.toLowerCase() != "null") { resp = r.jsonObject; break; }
         }
 
+
         val current = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
         val formatted = current.format(formatter)
         val eb = EmbedBuilder()
         eb.setTitle("Delegalizacja $text", null)

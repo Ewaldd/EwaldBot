@@ -20,8 +20,9 @@ class ChannelCommand(val bot: EwaldBot) : Command(
             channel.sendMessage("Ta komenda dostepna jest tylko na serwerach!").queue()
             return
         }
+
         val current = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
         val formatted = current.format(formatter)
         val eb = EmbedBuilder()
         eb.setTitle("Informacje o kanale #${channel.name}", null)

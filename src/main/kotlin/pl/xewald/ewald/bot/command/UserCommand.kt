@@ -11,7 +11,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
-class UserCommand(val bot: EwaldBot) : Command(
+class UserCommand   (val bot: EwaldBot) : Command(
         "user",
         "Podstawowe informacje o członku gildii",
         listOf("pomoc")
@@ -32,7 +32,7 @@ class UserCommand(val bot: EwaldBot) : Command(
         }
         val user = if (!message.mentionedMembers.isEmpty()) message.mentionedMembers.first() else member
         val current = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
         val formatted = current.format(formatter)
         val eb = EmbedBuilder()
         eb.setTitle("Informacje o ${user.effectiveName}", null)

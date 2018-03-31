@@ -24,7 +24,7 @@ class HiveMCPlayerCommand(val bot: EwaldBot) : Command(
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         val current = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
         val formatted = current.format(formatter)
         if (args.size == 1) {
             val mojang_api = khttp.get("https://api.mojang.com/users/profiles/minecraft/${args[0]}")
