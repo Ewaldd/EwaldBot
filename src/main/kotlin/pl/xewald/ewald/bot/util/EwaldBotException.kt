@@ -1,6 +1,6 @@
 package pl.xewald.ewald.bot.util
 
-class EventBotException: RuntimeException {
+class EwaldBotException : RuntimeException {
 
     constructor() : super()
 

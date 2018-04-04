@@ -1,6 +1,5 @@
 package pl.xewald.ewald.bot
 
-import kotlinx.coroutines.experimental.channels.BroadcastChannel
 import net.dv8tion.jda.core.AccountType
 import net.dv8tion.jda.core.JDA
 import net.dv8tion.jda.core.JDABuilder
@@ -13,7 +12,7 @@ import pl.xewald.ewald.bot.command.util.CommandManager
 import pl.xewald.ewald.bot.config.EwaldBotConfig
 import pl.xewald.ewald.bot.listener.JoinListener
 import pl.xewald.ewald.bot.listener.MessageListener
-import pl.xewald.ewald.bot.util.EventBotException
+import pl.xewald.ewald.bot.util.EwaldBotException
 
 class EwaldBot(val config: EwaldBotConfig) {
 
@@ -27,9 +26,12 @@ class EwaldBot(val config: EwaldBotConfig) {
 
     fun start() {
         if (running)
-            throw EventBotException("Bot is already running!")
+            throw EwaldBotException("Bot is already running!")
+        val token = config.token
+        if (token.isEmpty() || token == "TOKEN")
+            throw EwaldBotException("You have to set token in configuration file!")
         jda = JDABuilder(AccountType.BOT)
-                .setToken(config.token)
+                .setToken(token)
                 .addEventListener(JoinListener(this))
                 .addEventListener(MessageListener(this))
                 .setAudioEnabled(false)
@@ -53,7 +55,7 @@ class EwaldBot(val config: EwaldBotConfig) {
 
     fun stop() {
         if (!running)
-            throw EventBotException("Bot is not running!")
+            throw EwaldBotException("Bot is not running!")
         running = false
         jda.shutdown()
     }
