@@ -5,10 +5,18 @@ import net.dv8tion.jda.core.JDA
 import net.dv8tion.jda.core.JDABuilder
 import net.dv8tion.jda.core.OnlineStatus
 import net.dv8tion.jda.core.entities.Game
-import pl.xewald.ewald.bot.command.*
-import pl.xewald.ewald.bot.command.gamecommand.HiveMCPlayerCommand
-import pl.xewald.ewald.bot.command.gamecommand.ServerCommand
-import pl.xewald.ewald.bot.command.util.CommandManager
+import pl.xewald.ewald.bot.command.`fun`.IllegalCommand
+import pl.xewald.ewald.bot.command.admin.BroadcastCommand
+import pl.xewald.ewald.bot.command.admin.PollCommand
+import pl.xewald.ewald.bot.command.bot.BotCommand
+import pl.xewald.ewald.bot.command.bot.HelpCommand
+import pl.xewald.ewald.bot.command.game.HiveMCPlayerCommand
+import pl.xewald.ewald.bot.command.game.ServerCommand
+import pl.xewald.ewald.bot.command.useful.ChannelCommand
+import pl.xewald.ewald.bot.command.useful.UserCommand
+import pl.xewald.ewald.bot.command.useful.WeatherCommand
+import pl.xewald.ewald.bot.command.CommandManager
+import pl.xewald.ewald.bot.command.useful.CryptocurrencyCommand
 import pl.xewald.ewald.bot.config.EwaldBotConfig
 import pl.xewald.ewald.bot.listener.JoinListener
 import pl.xewald.ewald.bot.listener.MessageListener
@@ -50,6 +58,7 @@ class EwaldBot(val config: EwaldBotConfig) {
         commandManager.add(IllegalCommand(this))
         commandManager.add(WeatherCommand(this))
         commandManager.add(PollCommand(this))
+        commandManager.add(CryptocurrencyCommand(this))
         running = true
     }
 

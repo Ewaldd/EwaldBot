@@ -1,15 +1,13 @@
-package pl.xewald.ewald.bot.command.gamecommand
+package pl.xewald.ewald.bot.command.game
 
-import khttp.get
 import net.dv8tion.jda.core.EmbedBuilder
 import net.dv8tion.jda.core.entities.Member
 import net.dv8tion.jda.core.entities.Message
-import net.dv8tion.jda.core.entities.Guild
 import net.dv8tion.jda.core.entities.MessageChannel
-import org.json.JSONArray
 import org.json.JSONObject
 import pl.xewald.ewald.bot.EwaldBot
-import pl.xewald.ewald.bot.command.util.Command
+import pl.xewald.ewald.bot.command.Command
+import pl.xewald.ewald.bot.command.CommandCategory
 import java.awt.Color
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -19,6 +17,7 @@ import java.util.Random;
 
 class ServerCommand(val bot: EwaldBot) : Command(
         "serwer",
+        CommandCategory.GAME,
         "Sprawdź informacje o serwerze",
         listOf("pomoc")
 ) {
