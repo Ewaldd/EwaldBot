@@ -1,24 +1,21 @@
-package pl.xewald.ewald.bot.command.gamecommand
+package pl.xewald.ewald.bot.command.game
 
-import khttp.get
 import net.dv8tion.jda.core.EmbedBuilder
 import net.dv8tion.jda.core.entities.Member
 import net.dv8tion.jda.core.entities.Message
-import net.dv8tion.jda.core.entities.Guild
 import net.dv8tion.jda.core.entities.MessageChannel
-import org.json.JSONArray
 import org.json.JSONObject
 import pl.xewald.ewald.bot.EwaldBot
-import pl.xewald.ewald.bot.command.util.Command
-import java.text.DateFormat
+import pl.xewald.ewald.bot.command.Command
+import pl.xewald.ewald.bot.command.CommandCategory
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
-import java.util.*
 import khttp.delete as httpDelete
 
 class HiveMCPlayerCommand(val bot: EwaldBot) : Command(
         "hivemc",
+        CommandCategory.GAME,
         "Sprawdź statystyki na serwerze hivemc.com",
         listOf("pomoc")
 ) {

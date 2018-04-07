@@ -1,4 +1,4 @@
-package pl.xewald.ewald.bot.command
+package pl.xewald.ewald.bot.command.`fun`
 
 import net.dv8tion.jda.core.EmbedBuilder
 import net.dv8tion.jda.core.entities.Member
@@ -6,13 +6,15 @@ import net.dv8tion.jda.core.entities.Message
 import net.dv8tion.jda.core.entities.MessageChannel
 import org.json.JSONObject
 import pl.xewald.ewald.bot.EwaldBot
-import pl.xewald.ewald.bot.command.util.Command
+import pl.xewald.ewald.bot.command.Command
+import pl.xewald.ewald.bot.command.CommandCategory
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
 class IllegalCommand(val bot: EwaldBot) : Command(
         "zdelegalizuj",
+        CommandCategory.FUN,
         "Zdelegalizuj daną rzecz",
         listOf("illegal", "isillegal")
 ) {

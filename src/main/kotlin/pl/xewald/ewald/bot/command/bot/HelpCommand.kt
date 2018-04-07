@@ -1,14 +1,14 @@
-package pl.xewald.ewald.bot.command
+package pl.xewald.ewald.bot.command.bot
 
 import net.dv8tion.jda.core.entities.*
-import org.w3c.dom.css.RGBColor
 import pl.xewald.ewald.bot.EwaldBot
-import pl.xewald.ewald.bot.command.util.Command
+import pl.xewald.ewald.bot.command.Command
+import pl.xewald.ewald.bot.command.CommandCategory
 import pl.xewald.ewald.bot.util.basicEmbedBuilder
-import java.awt.Color
 
 class HelpCommand(val bot: EwaldBot) : Command(
         "help",
+        CommandCategory.BOT,
         "Pomoc.",
         listOf("pomoc")
 ) {
