@@ -1,15 +1,13 @@
-package pl.xewald.ewald.bot.command.gamecommand
+package pl.xewald.ewald.bot.command.game
 
-import khttp.get
 import net.dv8tion.jda.core.EmbedBuilder
 import net.dv8tion.jda.core.entities.Member
 import net.dv8tion.jda.core.entities.Message
-import net.dv8tion.jda.core.entities.Guild
 import net.dv8tion.jda.core.entities.MessageChannel
-import org.json.JSONArray
 import org.json.JSONObject
 import pl.xewald.ewald.bot.EwaldBot
-import pl.xewald.ewald.bot.command.util.Command
+import pl.xewald.ewald.bot.command.Command
+import pl.xewald.ewald.bot.command.CommandCategory
 import java.awt.Color
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -17,8 +15,9 @@ import java.time.format.FormatStyle
 import khttp.delete as httpDelete
 import java.util.Random;
 
-class ServerCommand(val bot: EwaldBot) : Command(
-        "serwer",
+class MCServerCommand(val bot: EwaldBot) : Command(
+        "mcserwer",
+        CommandCategory.GAME,
         "Sprawdź informacje o serwerze",
         listOf("pomoc")
 ) {
@@ -38,7 +37,7 @@ class ServerCommand(val bot: EwaldBot) : Command(
                     val eb = EmbedBuilder()
                     eb.setAuthor("Informacje o serwerze: ${args[0]}")
                     eb.setDescription("Status: Online")
-                    eb.addField("Motd:", "${obj.get("description")}", true)
+                    eb.addField("Motd:", "```${obj.get("description")}```", true)
                     eb.setColor(randomColor)
                     eb.addField("Graczy:", "${obj.getJSONObject("players").get("online")} / ${obj.getJSONObject("players").get("max")}", true)
                     eb.addField("Wersja:", "${obj.getJSONObject("version").get("name")}", true)

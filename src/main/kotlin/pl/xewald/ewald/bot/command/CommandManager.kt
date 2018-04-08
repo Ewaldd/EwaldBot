@@ -1,4 +1,4 @@
-package pl.xewald.ewald.bot.command.util
+package pl.xewald.ewald.bot.command
 
 import java.util.*
 

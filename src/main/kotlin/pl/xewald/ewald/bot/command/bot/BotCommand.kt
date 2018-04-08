@@ -1,19 +1,19 @@
-package pl.xewald.ewald.bot.command
+package pl.xewald.ewald.bot.command.bot
 
 import net.dv8tion.jda.core.EmbedBuilder
 import net.dv8tion.jda.core.entities.Member
 import net.dv8tion.jda.core.entities.Message
 import net.dv8tion.jda.core.entities.MessageChannel
 import pl.xewald.ewald.bot.EwaldBot
-import pl.xewald.ewald.bot.command.util.Command
-import java.awt.Color
-import java.text.SimpleDateFormat
+import pl.xewald.ewald.bot.command.Command
+import pl.xewald.ewald.bot.command.CommandCategory
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
 class BotCommand(val bot: EwaldBot) : Command(
         "bot",
+        CommandCategory.BOT,
         "Informacje o bocie",
         listOf("pomoc")
 ) {
