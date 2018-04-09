@@ -14,6 +14,7 @@ import pl.xewald.ewald.bot.command.game.HiveMCPlayerCommand
 import pl.xewald.ewald.bot.command.game.MCServerCommand
 import pl.xewald.ewald.bot.command.CommandManager
 import pl.xewald.ewald.bot.command.`fun`.EmbedCommand
+import pl.xewald.ewald.bot.command.`fun`.HugCommand
 import pl.xewald.ewald.bot.command.`fun`.YesNoCommand
 import pl.xewald.ewald.bot.command.useful.*
 import pl.xewald.ewald.bot.command.useful.ChannelCommand
@@ -62,6 +63,7 @@ class EwaldBot(val config: EwaldBotConfig) {
         commandManager.add(IllegalCommand(this))
         commandManager.add(YesNoCommand(this))
         commandManager.add(EmbedCommand(this))
+        commandManager.add(HugCommand(this))
         commandManager.add(WeatherCommand(this))
         commandManager.add(PollCommand(this))
         commandManager.add(CryptocurrencyCommand(this))
