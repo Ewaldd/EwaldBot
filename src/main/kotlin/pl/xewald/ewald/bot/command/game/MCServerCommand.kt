@@ -47,10 +47,10 @@ class MCServerCommand(val bot: EwaldBot) : Command(
                     channel.sendMessage("Na podanym IP nie ma działającego serwerra").queue()
                 }
             } else {
-                channel.sendMessage("Poprawne użycie: !serwer <adres serwera>").queue()
+                channel.sendMessage("Poprawne użycie: !mcserwer <adres serwera>").queue()
             }
         } else {
-            channel.sendMessage("Poprawne użycie: !serwer <adres serwera>").queue()
+            channel.sendMessage("Poprawne użycie: !mcserwer <adres serwera>").queue()
         }
     }
 }

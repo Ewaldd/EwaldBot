@@ -33,7 +33,7 @@ class PollCommand(val bot: EwaldBot) : Command(
                     val formatted = current.format(formatter)
                     val eb = EmbedBuilder()
                     eb.setTitle("EwaldBot, ankieta")
-                    eb.setDescription("${args.drop(1).joinToString(" ")}")
+                    eb.setDescription(args.drop(1).joinToString(" "))
                     eb.setColor(member.color)
                     eb.setFooter("Ewaldbot $formatted", member.user.avatarUrl)
                     channel.deleteMessageById(message.id).queue()

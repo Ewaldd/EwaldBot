@@ -13,8 +13,9 @@ import pl.xewald.ewald.bot.command.bot.HelpCommand
 import pl.xewald.ewald.bot.command.game.HiveMCPlayerCommand
 import pl.xewald.ewald.bot.command.game.MCServerCommand
 import pl.xewald.ewald.bot.command.CommandManager
+import pl.xewald.ewald.bot.command.`fun`.EmbedCommand
+import pl.xewald.ewald.bot.command.`fun`.YesNoCommand
 import pl.xewald.ewald.bot.command.useful.*
-import pl.xewald.ewald.bot.command.game.ServerCommand
 import pl.xewald.ewald.bot.command.useful.ChannelCommand
 import pl.xewald.ewald.bot.command.useful.UserCommand
 import pl.xewald.ewald.bot.command.useful.WeatherCommand
@@ -47,7 +48,7 @@ class EwaldBot(val config: EwaldBotConfig) {
                 .setAudioEnabled(false)
                 .setAutoReconnect(true)
                 .setStatus(OnlineStatus.ONLINE)
-                .setGame(Game.streaming("Wpisz !help | v1.1", "https://www.twitch.tv/boleknowak"))
+                .setGame(Game.streaming("Wpisz !help | v1.2", "https://www.twitch.tv/boleknowak"))
                 .buildBlocking()
         commandManager.add(HelpCommand(this))
         commandManager.add(ChannelCommand(this))
@@ -59,6 +60,8 @@ class EwaldBot(val config: EwaldBotConfig) {
         commandManager.add(MCServerCommand(this))
         commandManager.add(HiveMCPlayerCommand(this))
         commandManager.add(IllegalCommand(this))
+        commandManager.add(YesNoCommand(this))
+        commandManager.add(EmbedCommand(this))
         commandManager.add(WeatherCommand(this))
         commandManager.add(PollCommand(this))
         commandManager.add(CryptocurrencyCommand(this))

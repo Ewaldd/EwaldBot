@@ -31,10 +31,10 @@ class ServerCommand(val bot: EwaldBot) : Command(
             eb.setDescription("ID: ${g.id}")
             eb.addField("Poziom weryfikacji", when {
                 g.verificationLevel.name == "NONE" -> "Brak"
-                g.verificationLevel.name == "LOW" -> "Niska"
-                g.verificationLevel.name == "MEDIUM" -> "Średnia"
-                g.verificationLevel.name == "HIGH" -> "Wysoka"
-                else -> "Bardzo wysoka"
+                g.verificationLevel.name == "LOW" -> "Niski"
+                g.verificationLevel.name == "MEDIUM" -> "Średni"
+                g.verificationLevel.name == "HIGH" -> "Wysoki"
+                else -> "Bardzo wysoki"
             }, false)
             eb.addField("Region", "${g.region}", true)
             eb.addField("Członkowie [${g.members.size}]", "", true)
@@ -49,19 +49,21 @@ class ServerCommand(val bot: EwaldBot) : Command(
             eb.setColor(member.color)
             channel.sendMessage(eb.build()).queue()
         } else if (args.size == 1) {
-            if (args[0].toLowerCase() == "help") {
-                eb.setAuthor(g.name, "https://bot.xewald.pl", g.iconUrl)
-                eb.setThumbnail(g.iconUrl)
-                eb.setDescription("!serwer - wyświetla informacje o serwerze.\n!serwer role - wyświetla wszystkie role na serwerze.")
-                channel.sendMessage(eb.build()).queue()
-            } else if (args[0].toLowerCase() == "role") {
-                eb.setAuthor(g.name, "https://bot.xewald.pl", g.iconUrl)
-                eb.setColor(member.color)
-                eb.setThumbnail(g.iconUrl)
-                eb.setDescription("Wszystkie role na serwerze: \n" + g.roles.joinToString(", "))
-                channel.sendMessage(eb.build()).queue()
-            } else {
-                channel.sendMessage("Poprawne użycie: !serwer help")
+            when {
+                args[0].toLowerCase() == "help" || args[0].toLowerCase() == "pomoc" -> {
+                    eb.setAuthor(g.name, "https://bot.xewald.pl", g.iconUrl)
+                    eb.setThumbnail(g.iconUrl)
+                    eb.setDescription("!serwer - wyświetla informacje o serwerze.\n!serwer role - wyświetla wszystkie role na serwerze.")
+                    channel.sendMessage(eb.build()).queue()
+                }
+                args[0].toLowerCase() == "role" || args[0].toLowerCase() == "roles" -> {
+                    eb.setAuthor(g.name, "https://bot.xewald.pl", g.iconUrl)
+                    eb.setColor(member.color)
+                    eb.setThumbnail(g.iconUrl)
+                    eb.setDescription("Wszystkie role na serwerze: \n" + g.roles.joinToString(", "))
+                    channel.sendMessage(eb.build()).queue()
+                }
+                else -> channel.sendMessage("Poprawne użycie: !serwer help")
             }
         }
     }
