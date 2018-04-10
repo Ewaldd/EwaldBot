@@ -17,10 +17,10 @@ import java.time.format.FormatStyle
 import java.util.*
 import java.math.*
 
-class HugCommand(val bot: EwaldBot) : Command(
-        "przytul",
+class HitCommand(val bot: EwaldBot) : Command(
+        "uderz",
         CommandCategory.FUN,
-        "Przytul kogoś/coś",
+        "Uderz kogoś/coś",
         listOf("pomoc")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
@@ -28,28 +28,25 @@ class HugCommand(val bot: EwaldBot) : Command(
             channel.sendMessage("Ta komenda zadziała tylko na serwerach!").queue()
             return
         }
-        if (args.isNotEmpty()) {
+        if(args.isNotEmpty()) {
             if (message.mentionedUsers.isEmpty()) {
-                val rand = Random().nextInt(3 - 1 + 1) + 1
                 val eb = EmbedBuilder()
-                eb.setTitle("${member.effectiveName} przytulił ${args.joinToString(" ")} \uD83D\uDC95")
                 eb.setColor(member.color)
+                eb.setTitle("${member.effectiveName} uderza ${args.joinToString(" ")} \uD83D\uDC4A")
+                val rand = Random().nextInt(3 - 1 + 1) + 1
                 eb.setImage(
                         when (rand) {
-                            1 -> "https://media.giphy.com/media/qscdhWs5o3yb6/giphy.gif"
-                            2 -> "https://media.giphy.com/media/wnsgren9NtITS/giphy.gif"
-                            else -> "https://media2.giphy.com/media/VGACXbkf0AeGs/giphy.gif"
+                            1 -> "https://media.giphy.com/media/BKRECiW08vdjG/giphy.gif"
+                            2 -> "https://media.giphy.com/media/AlsIdbTgxX0LC/giphy.gif"
+                            else -> "https://media.giphy.com/media/rcRwO8GMSfNV6/giphy.gif"
                         }
                 )
                 channel.sendMessage(eb.build()).queue()
             } else {
-                channel.sendMessage("Wiadomość nie może posiadać oznaczenia!").queue()
+                channel.sendMessage("Komenda nie może posiadać oznaczenia!").queue()
             }
-        } else {
-            channel.sendMessage("Wiadomość jest pusta!").queue()
+        }else{
+            channel.sendMessage("Wiadomość nie możę być pusta!").queue()
         }
     }
 }
-
-
-

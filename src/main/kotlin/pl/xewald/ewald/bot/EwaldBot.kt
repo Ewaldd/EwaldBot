@@ -5,7 +5,6 @@ import net.dv8tion.jda.core.JDA
 import net.dv8tion.jda.core.JDABuilder
 import net.dv8tion.jda.core.OnlineStatus
 import net.dv8tion.jda.core.entities.Game
-import pl.xewald.ewald.bot.command.`fun`.IllegalCommand
 import pl.xewald.ewald.bot.command.admin.BroadcastCommand
 import pl.xewald.ewald.bot.command.admin.PollCommand
 import pl.xewald.ewald.bot.command.bot.BotCommand
@@ -13,9 +12,7 @@ import pl.xewald.ewald.bot.command.bot.HelpCommand
 import pl.xewald.ewald.bot.command.game.HiveMCPlayerCommand
 import pl.xewald.ewald.bot.command.game.MCServerCommand
 import pl.xewald.ewald.bot.command.CommandManager
-import pl.xewald.ewald.bot.command.`fun`.EmbedCommand
-import pl.xewald.ewald.bot.command.`fun`.HugCommand
-import pl.xewald.ewald.bot.command.`fun`.YesNoCommand
+import pl.xewald.ewald.bot.command.`fun`.*
 import pl.xewald.ewald.bot.command.useful.*
 import pl.xewald.ewald.bot.command.useful.ChannelCommand
 import pl.xewald.ewald.bot.command.useful.UserCommand
@@ -64,6 +61,7 @@ class EwaldBot(val config: EwaldBotConfig) {
         commandManager.add(YesNoCommand(this))
         commandManager.add(EmbedCommand(this))
         commandManager.add(HugCommand(this))
+        commandManager.add(HitCommand(this))
         commandManager.add(WeatherCommand(this))
         commandManager.add(PollCommand(this))
         commandManager.add(CryptocurrencyCommand(this))

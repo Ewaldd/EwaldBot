@@ -27,19 +27,22 @@ class YesNoCommand(val bot: EwaldBot) : Command(
             channel.sendMessage("Ta komenda zadziała tylko na serwerach!").queue()
             return
         }
-        val eb = EmbedBuilder()
-        eb.setAuthor(member.effectiveName, null, member.user.avatarUrl)
-        val obj: JSONObject = khttp.get("https://yesno.wtf/api").jsonObject
-        eb.setDescription("Pytanie: `${args.joinToString(" ")}`\n" +
-                "Odpowiedź: ${if (obj.get("answer") == "yes") {
-                    "Tak"
-                } else {
-                    "Nie"
-                }
-                }")
-        eb.setImage("${obj.get("image")}")
-        eb.setColor(member.color)
-        channel.sendMessage(eb.build()).queue()
-
+        if(args.isNotEmpty()) {
+            val eb = EmbedBuilder()
+            eb.setAuthor(member.effectiveName, null, member.user.avatarUrl)
+            val obj: JSONObject = khttp.get("https://yesno.wtf/api").jsonObject
+            eb.setDescription("Pytanie: `${args.joinToString(" ")}`\n" +
+                    "Odpowiedź: ${if (obj.get("answer") == "yes") {
+                        "Tak"
+                    } else {
+                        "Nie"
+                    }
+                    }")
+            eb.setImage("${obj.get("image")}")
+            eb.setColor(member.color)
+            channel.sendMessage(eb.build()).queue()
+        }else{
+            channel.sendMessage("Wiadomość nie może być pusta!").queue()
+        }
     }
 }

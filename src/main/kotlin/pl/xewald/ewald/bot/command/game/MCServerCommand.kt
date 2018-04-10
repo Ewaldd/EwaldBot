@@ -44,7 +44,7 @@ class MCServerCommand(val bot: EwaldBot) : Command(
                     eb.setFooter("EwaldBot, $formatted ", "https://xewald.pl/Ewald.gif")
                     channel.sendMessage(eb.build()).queue()
                 } else {
-                    channel.sendMessage("Na podanym IP nie ma działającego serwerra").queue()
+                    channel.sendMessage("Na podanym IP nie ma działającego serwera").queue()
                 }
             } else {
                 channel.sendMessage("Poprawne użycie: !mcserwer <adres serwera>").queue()
