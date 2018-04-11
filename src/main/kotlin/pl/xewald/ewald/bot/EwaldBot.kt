@@ -62,6 +62,7 @@ class EwaldBot(val config: EwaldBotConfig) {
         commandManager.add(EmbedCommand(this))
         commandManager.add(HugCommand(this))
         commandManager.add(HitCommand(this))
+        commandManager.add(RPSCommand(this))
         commandManager.add(WeatherCommand(this))
         commandManager.add(PollCommand(this))
         commandManager.add(CryptocurrencyCommand(this))
