@@ -17,7 +17,7 @@ class BroadcastCommand(val bot: EwaldBot) : Command(
         "ogloszenie",
         CommandCategory.ADMIN,
         "Napisz ogłoszenie",
-        listOf("pomoc")
+        listOf("ogłoszenie", "bc", "broadcast")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
 
@@ -29,15 +29,13 @@ class BroadcastCommand(val bot: EwaldBot) : Command(
             return
         }
         if (member.hasPermission(Permission.MESSAGE_MANAGE) || member.user.name == "Ewald") {
-            if (args.size == 0) {
+            if (args.isEmpty()) {
                 channel.sendMessage("Nie podałeś treści ogłoszenia!").queue()
                 return
             } else {
-                var ad = ""
-                for (arg in args) ad += arg + " "
                 val eb = EmbedBuilder()
                 eb.setTitle("Ogłoszenie")
-                eb.setDescription(ad)
+                eb.setDescription(args.joinToString(" "))
                 eb.setColor(Color.RED)
                 eb.setFooter("${member.user.name}, $formatted", member.user.avatarUrl)
                 channel.deleteMessageById(message.id).queue()

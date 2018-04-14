@@ -1,7 +1,6 @@
 package pl.xewald.ewald.bot.command.admin
 
 import net.dv8tion.jda.core.EmbedBuilder
-import net.dv8tion.jda.core.Permission
 import net.dv8tion.jda.core.entities.Member
 import net.dv8tion.jda.core.entities.Message
 import net.dv8tion.jda.core.entities.MessageChannel
@@ -16,7 +15,7 @@ class PollCommand(val bot: EwaldBot) : Command(
         "ankieta",
         CommandCategory.ADMIN,
         "Stwórz ankiete.",
-        listOf("pomoc")
+        listOf("poll")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         if (member == null) {
@@ -31,7 +30,7 @@ class PollCommand(val bot: EwaldBot) : Command(
                 val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
                 val formatted = current.format(formatter)
                 val eb = EmbedBuilder()
-                eb.setTitle("EwaldBot, ankieta")
+                eb.setTitle("Ankieta użytkownika ${member.effectiveName}")
                 eb.setDescription(args.drop(1).joinToString(" "))
                 eb.setColor(member.color)
                 eb.setFooter("Ewaldbot $formatted", member.user.avatarUrl)

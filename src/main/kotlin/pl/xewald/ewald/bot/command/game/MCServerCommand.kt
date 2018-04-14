@@ -1,5 +1,6 @@
 package pl.xewald.ewald.bot.command.game
 
+import khttp.get
 import net.dv8tion.jda.core.EmbedBuilder
 import net.dv8tion.jda.core.entities.Member
 import net.dv8tion.jda.core.entities.Message
@@ -19,7 +20,7 @@ class MCServerCommand(val bot: EwaldBot) : Command(
         "mcserwer",
         CommandCategory.GAME,
         "Sprawdź informacje o serwerze",
-        listOf("pomoc")
+        listOf("serwermc")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         val current = LocalDateTime.now()
@@ -32,12 +33,13 @@ class MCServerCommand(val bot: EwaldBot) : Command(
         val randomColor = Color(r, g, b)
         if (args.size == 1) {
             if (args[0].contains('.')) {
-                val obj: JSONObject = khttp.get("https://api.skript.pl/server/${args[0]}/").jsonObject
+                val obj: JSONObject = get("https://api.skript.pl/server/${args[0]}/").jsonObject
                 if (obj.get("online") == true) {
                     val eb = EmbedBuilder()
+                    val description = obj.getString("description").replace(Regex("§[0-9a-fk-or]"), "")
                     eb.setAuthor("Informacje o serwerze: ${args[0]}")
                     eb.setDescription("Status: Online")
-                    eb.addField("Motd:", "```${obj.get("description")}```", true)
+                    eb.addField("Motd:", "```$description```", true)
                     eb.setColor(randomColor)
                     eb.addField("Graczy:", "${obj.getJSONObject("players").get("online")} / ${obj.getJSONObject("players").get("max")}", true)
                     eb.addField("Wersja:", "${obj.getJSONObject("version").get("name")}", true)

@@ -7,6 +7,7 @@ import pl.xewald.ewald.bot.EwaldBot
 class JoinListener(val bot: EwaldBot): ListenerAdapter() {
 
     override fun onGuildMemberJoin(event: GuildMemberJoinEvent) {
+
     }
 
 }

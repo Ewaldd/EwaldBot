@@ -19,7 +19,7 @@ class WeatherCommand(val bot: EwaldBot) : Command(
         "pogoda",
         CommandCategory.USEFUL,
         "Sprawdź pogodę w danym mieście",
-        listOf("pomoc")
+        listOf("weather")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) =
             if (args.size == 1) {

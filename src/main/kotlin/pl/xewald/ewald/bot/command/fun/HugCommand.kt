@@ -21,7 +21,7 @@ class HugCommand(val bot: EwaldBot) : Command(
         "przytul",
         CommandCategory.FUN,
         "Przytul kogoś/coś",
-        listOf("pomoc")
+        listOf("hug")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         if (member == null) {
@@ -30,7 +30,7 @@ class HugCommand(val bot: EwaldBot) : Command(
         }
         if (args.isNotEmpty()) {
             if (message.mentionedUsers.isEmpty()) {
-                val rand = Random().nextInt(12 - 1 + 1) + 1
+                val rand = Random().nextInt(12)
                 val eb = EmbedBuilder()
                 eb.setTitle("${member.effectiveName} przytulił ${args.joinToString(" ")} \uD83D\uDC95")
                 eb.setColor(member.color)

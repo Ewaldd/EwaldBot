@@ -21,7 +21,7 @@ class RPSCommand(val bot: EwaldBot) : Command(
         "kpn",
         CommandCategory.FUN,
         "Zagraj z botem w kamień papier nożyce.",
-        listOf("pomoc")
+        listOf("rpn")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         if (args.size == 1) {

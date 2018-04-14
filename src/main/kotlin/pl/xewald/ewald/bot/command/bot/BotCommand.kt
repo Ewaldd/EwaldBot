@@ -15,7 +15,7 @@ class BotCommand(val bot: EwaldBot) : Command(
         "bot",
         CommandCategory.BOT,
         "Informacje o bocie",
-        listOf("pomoc")
+        listOf("ewaldbot")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         val current = LocalDateTime.now()

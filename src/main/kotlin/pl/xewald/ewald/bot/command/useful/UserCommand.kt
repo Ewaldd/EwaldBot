@@ -16,7 +16,7 @@ class UserCommand   (val bot: EwaldBot) : Command(
         "user",
         CommandCategory.USEFUL,
         "Podstawowe informacje o członku gildii",
-        listOf("pomoc")
+        listOf("uzytkownik", "użytkownik")
 ) {
     val statusLangMap = mapOf(
             OnlineStatus.DO_NOT_DISTURB to "Nie przeszkadzać",

@@ -17,16 +17,16 @@ class HiveMCPlayerCommand(val bot: EwaldBot) : Command(
         "hivemc",
         CommandCategory.GAME,
         "Sprawdź statystyki na serwerze hivemc.com",
-        listOf("pomoc")
+        listOf("mchive")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
         val formatted = current.format(formatter)
         if (args.size == 1) {
-            val mojang_api = khttp.get("https://api.mojang.com/users/profiles/minecraft/${args[0]}")
-            val mojang_connect: JSONObject = mojang_api.jsonObject
-            val uuid = mojang_connect.get("id")
+            val mojangApi = khttp.get("https://api.mojang.com/users/profiles/minecraft/${args[0]}")
+            val mojangConnect: JSONObject = mojangApi.jsonObject
+            val uuid = mojangConnect.get("id")
             val api = khttp.get("http://api.hivemc.com/v1/player/$uuid")
             val obj: JSONObject = api.jsonObject
             val eb = EmbedBuilder().apply {

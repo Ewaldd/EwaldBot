@@ -15,7 +15,7 @@ class ChannelCommand(val bot: EwaldBot) : Command(
         "channel",
         CommandCategory.USEFUL,
         "Sprawdz informacje o kanale",
-        listOf("pomoc")
+        listOf("kanał", "kanal")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         if (member == null) {

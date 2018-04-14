@@ -18,7 +18,7 @@ class ServerCommand(val bot: EwaldBot) : Command(
         "serwer",
         CommandCategory.USEFUL,
         "Sprawdz informacje o serwerze",
-        listOf("pomoc")
+        listOf("server")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         if (member == null) {
@@ -27,7 +27,7 @@ class ServerCommand(val bot: EwaldBot) : Command(
         }
         val g = member.guild
         val eb = EmbedBuilder()
-        if (args.size == 0) {
+        if (args.isEmpty()) {
             eb.setDescription("ID: ${g.id}")
             eb.addField("Poziom weryfikacji", when {
                 g.verificationLevel.name == "NONE" -> "Brak"

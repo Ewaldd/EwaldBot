@@ -16,7 +16,7 @@ class CryptocurrencyCommand(val bot: EwaldBot) : Command(
         "kryptowaluta",
         CommandCategory.USEFUL,
         "Sprawdź informacje o kryptowalucie.",
-        listOf("pomoc")
+        listOf("cryptocurrency", "krypto")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         if (args.size == 1) {

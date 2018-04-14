@@ -20,7 +20,7 @@ class YesNoCommand(val bot: EwaldBot) : Command(
         "tn",
         CommandCategory.FUN,
         "Odpowiedź na pytanie",
-        listOf("pomoc")
+        listOf("yn", "taknie", "yesno")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
         if (member == null) {
@@ -31,15 +31,14 @@ class YesNoCommand(val bot: EwaldBot) : Command(
             val eb = EmbedBuilder()
             eb.setAuthor(member.effectiveName, null, member.user.avatarUrl)
             val obj: JSONObject = khttp.get("https://yesno.wtf/api").jsonObject
-            eb.setDescription("Pytanie: `${args.joinToString(" ")}`\n" +
-                    "Odpowiedź: ${if (obj.get("answer") == "yes") {
-                        "Tak"
-                    } else {
-                        "Nie"
-                    }
-                    }")
+            if(obj.get("answer") == "yes"){
+                eb.setDescription("Pytanie: `${args.joinToString(" ")}`\n Odpowiedź: Tak")
+                eb.setColor(Color.GREEN)
+            }else{
+                eb.setDescription("Pytanie: `${args.joinToString(" ")}`\n Odpowiedź: Nie")
+                eb.setColor(Color.RED)
+            }
             eb.setImage("${obj.get("image")}")
-            eb.setColor(member.color)
             channel.sendMessage(eb.build()).queue()
         }else{
             channel.sendMessage("Wiadomość nie może być pusta!").queue()
