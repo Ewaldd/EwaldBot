@@ -8,6 +8,7 @@ import net.dv8tion.jda.core.entities.MessageChannel
 import pl.xewald.ewald.bot.EwaldBot
 import pl.xewald.ewald.bot.command.Command
 import pl.xewald.ewald.bot.command.CommandCategory
+import java.awt.Color
 import java.math.BigDecimal
 import java.text.SimpleDateFormat
 import java.util.*
@@ -28,14 +29,24 @@ class CryptocurrencyCommand(val bot: EwaldBot) : Command(
             val sdf = SimpleDateFormat("HH:mm")
             val formattedUpdate = sdf.format(update)
             val eb = EmbedBuilder()
-            eb.setTitle("Informacje o: ${obj.getJSONObject(0).getString("name")}")
-            eb.setDescription("Skrót: ${obj.getJSONObject(0).getString("symbol")} \nCena: $pricepln PLN" +
-                    "\nCena: $priceusd USD\nCena: $pricebtc BTC" +
-                    "\nMiejsce w rankingu: ${obj.getJSONObject(0).getInt("rank")}" +
-                    "\nOstatnia zmiana: $formattedUpdate" +
-                    "\nZmiana w ciągu ostatniej godziny: ${obj.getJSONObject(0).getString("percent_change_1h")} %" +
-                    "\nZmiany w ciągu ostatniego dnia: ${obj.getJSONObject(0).getString("percent_change_24h")} %" +
-                    "\nZmiany w ciągu ostatniego tygodnia: ${obj.getJSONObject(0).getString("percent_change_7d")} %")
+            eb.setTitle("Informacje o kryptowalucie")
+            eb.setFooter("EwaldBot.", "https://xewald.pl/Ewald.gif")
+            eb.setThumbnail("http://cryptoicons.co/128/color/${obj.getJSONObject(0).getString("symbol").toLowerCase()}.png")
+            if(obj.getJSONObject(0).getString("percent_change_1h") > "0"){
+                eb.setColor(Color.GREEN)
+            }else{
+                eb.setColor(Color.RED)
+            }
+            eb.addField("Nazwa:", obj.getJSONObject(0).getString("name"), true)
+            eb.addField("Symbol :", obj.getJSONObject(0).getString("symbol"), true)
+            eb.addField("Miejsce w rankingu:", "#${obj.getJSONObject(0).getInt("rank")}", true)
+            eb.addField("Ostatnia aktualizacja:", formattedUpdate, true)
+            eb.addField("Cena:", "$pricepln PLN", true)
+            eb.addField("Cena:", "$priceusd USD", true)
+            eb.addField("Cena:", "$pricebtc BTC", true)
+            eb.addField("Zmiana ceny - 1 godzina:", "${obj.getJSONObject(0).getString("percent_change_1h")} %", true)
+            eb.addField("Zmiana ceny - 1 dzień:", "${obj.getJSONObject(0).getString("percent_change_24h")} %", true)
+            eb.addField("Zmiana ceny - 1 tydzień:", "${obj.getJSONObject(0).getString("percent_change_7d")} %", true)
             channel.sendMessage(eb.build()).queue()
         }
 

@@ -28,72 +28,73 @@ class RPSCommand(val bot: EwaldBot) : Command(
             if (args[0].toLowerCase() == "kamien" || args[0].toLowerCase() == "kamień" || args[0].toLowerCase() == "nożyce" || args[0].toLowerCase() == "nozyce" || args[0].toLowerCase() == "papier") {
                 val rand = Random().nextInt(3 - 1 + 1) + 1
                 val eb = EmbedBuilder()
-                eb.setAuthor("${member!!.effectiveName} wybrał ${args[0]}", null, member.user.avatarUrl)
-
                 when (args[0].toLowerCase()) {
                     "kamień", "kamien" -> {
+                        eb.addField("Twój wybór:", "${args.joinToString(" ")} \uD83E\uDD1C", true)
                         when (rand) {
                             1 -> {
                                 eb.setColor(Color.GREEN)
-                                eb.setDescription("Brawo! Wygrałeś!\n" +
-                                        "Bot wybrał ✌!")
+                                eb.addField("Wybór bota:", "Nożyce ✌", true)
+                                eb.addField("Wynik:", "Wygrana", true)
                             }
                             2 -> {
                                 eb.setColor(Color.YELLOW)
-                                eb.setDescription("Remis! \n" +
-                                        "Bot wybrał \uD83E\uDD1C!")
+                                eb.addField("Wybór bota:", "Kamień \uD83E\uDD1C", true)
+                                eb.addField("Wynik:", "Remis", true)
                             }
                             else -> {
                                 eb.setColor(Color.RED)
-                                eb.setDescription("Tym razem przegrałeś! \n" +
-                                        "Bot wybrał \uD83E\uDD1A")
+                                eb.addField("Wybór bota:", "Papier \uD83E\uDD1A", true)
+                                eb.addField("Wynik:", "Przegrana", true)
                             }
                         }
                     }
                     "nożyce", "nozyce" -> {
+                        eb.addField("Twój wybór:", "${args.joinToString(" ")} ✌", true)
                         when (rand) {
                             1 -> {
                                 eb.setColor(Color.YELLOW)
-                                eb.setDescription("Remis!\n" +
-                                        "Bot wybrał ✌!")
+                                eb.addField("Wybór bota:", "Nożyce ✌", true)
+                                eb.addField("Wynik:", "Remis", true)
                             }
                             2 -> {
                                 eb.setColor(Color.GREEN)
-                                eb.setDescription("Brawo! Wygrałeś! \n" +
-                                        "Bot wybrał \uD83E\uDD1A!")
+                                eb.addField("Wybór bota:", "Papier \uD83E\uDD1A", true)
+                                eb.addField("Wynik:", "Wygrana", true)
                             }
                             else -> {
                                 eb.setColor(Color.RED)
-                                eb.setDescription("Tym razem przegrałeś! \n" +
-                                        "Bot wybrał \uD83E\uDD1C")
+                                eb.addField("Wybór bota:", "Kamień \uD83E\uDD1C", true)
+                                eb.addField("Wynik:", "Przegrana", true)
                             }
                         }
                     }
                     "papier" -> {
+                        eb.addField("Twój wybór:", "${args.joinToString(" ")} \uD83E\uDD1A", true)
                         when (rand) {
                             1 -> {
                                 eb.setColor(Color.RED)
-                                eb.setDescription("Tym razem przegrałeś!\n" +
-                                        "Bot wybrał ✌!")
+                                eb.addField("Wybór bota:", "Nożyce ✌", true)
+                                eb.addField("Wynik:", "Przegrana", true)
                             }
                             2 -> {
                                 eb.setColor(Color.GREEN)
-                                eb.setDescription("Brawo! Wygrałeś! \n" +
-                                        "Bot wybrał \uD83E\uDD1C!")
+                                eb.addField("Wybór bota:", "Kamień \uD83E\uDD1C", true)
+                                eb.addField("Wynik:", "Wygrana", true)
                             }
                             else -> {
                                 eb.setColor(Color.YELLOW)
-                                eb.setDescription("Remis! \n" +
-                                        "Bot wybrał \uD83E\uDD1A")
+                                eb.addField("Wybór bota:", "Papier \uD83E\uDD1A", true)
+                                eb.addField("Wynik:", "Remis", true)
                             }
                         }
                     }
                 }
                 channel.sendMessage(eb.build()).queue()
-            }else{
+            } else {
                 channel.sendMessage("Wybierz kamień/papier/nożyce").queue()
             }
-        }else{
+        } else {
             channel.sendMessage("Wybierz kamień/papier/nożyce").queue()
         }
     }
