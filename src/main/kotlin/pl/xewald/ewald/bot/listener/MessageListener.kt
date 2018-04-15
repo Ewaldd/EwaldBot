@@ -8,7 +8,7 @@ import pl.xewald.ewald.bot.EwaldBot
 class MessageListener(val bot: EwaldBot) : ListenerAdapter() {
 
     override fun onMessageReceived(event: MessageReceivedEvent) {
-        val message = event.message.contentRaw!!
+        val message = event.message.contentRaw.toLowerCase()
         if (!message.startsWith('!'))
             return
         val splited = message.substring(1).split(" ")

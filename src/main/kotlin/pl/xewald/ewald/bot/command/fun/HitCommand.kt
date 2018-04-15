@@ -8,6 +8,7 @@ import pl.xewald.ewald.bot.EwaldBot
 import pl.xewald.ewald.bot.command.Command
 import pl.xewald.ewald.bot.command.CommandCategory
 import java.util.*
+
 class HitCommand(val bot: EwaldBot) : Command(
         "uderz",
         CommandCategory.FUN,
@@ -24,7 +25,7 @@ class HitCommand(val bot: EwaldBot) : Command(
                 val eb = EmbedBuilder()
                 eb.setColor(member.color)
                 eb.setTitle("${member.effectiveName} uderza ${args.joinToString(" ")} \uD83D\uDC4A")
-                val rand = Random().nextInt(10 - 1 + 1) + 1
+                val rand = Random().nextInt(11)
                 eb.setImage(
                         when (rand) {
                             1 -> "https://media.giphy.com/media/BKRECiW08vdjG/giphy.gif"

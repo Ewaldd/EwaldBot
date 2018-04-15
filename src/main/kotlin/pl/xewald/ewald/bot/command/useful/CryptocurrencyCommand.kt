@@ -38,7 +38,7 @@ class CryptocurrencyCommand(val bot: EwaldBot) : Command(
                 eb.setColor(Color.RED)
             }
             eb.addField("Nazwa:", obj.getJSONObject(0).getString("name"), true)
-            eb.addField("Symbol :", obj.getJSONObject(0).getString("symbol"), true)
+            eb.addField("Symbol:", obj.getJSONObject(0).getString("symbol"), true)
             eb.addField("Miejsce w rankingu:", "#${obj.getJSONObject(0).getInt("rank")}", true)
             eb.addField("Ostatnia aktualizacja:", formattedUpdate, true)
             eb.addField("Cena:", "$pricepln PLN", true)

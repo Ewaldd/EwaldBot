@@ -60,6 +60,3 @@ class HugCommand(val bot: EwaldBot) : Command(
         }
     }
 }
-
-
-
