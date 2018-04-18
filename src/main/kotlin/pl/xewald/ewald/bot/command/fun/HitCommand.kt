@@ -21,10 +21,10 @@ class HitCommand(val bot: EwaldBot) : Command(
             return
         }
         if (args.isNotEmpty()) {
-            if (message.mentionedUsers.isEmpty()) {
                 val eb = EmbedBuilder()
                 eb.setColor(member.color)
-                eb.setTitle("${member.effectiveName} uderza ${args.joinToString(" ")} \uD83D\uDC4A")
+                eb.setAuthor("EwaldBot", null, "https://xewald.pl/Ewald.gif")
+                eb.setDescription("${member.effectiveName} uderza ${args.joinToString(" ")} \uD83D\uDC4A")
                 val rand = Random().nextInt(11)
                 eb.setImage(
                         when (rand) {
@@ -41,9 +41,6 @@ class HitCommand(val bot: EwaldBot) : Command(
                         }
                 )
                 channel.sendMessage(eb.build()).queue()
-            } else {
-                channel.sendMessage("Komenda nie może posiadać oznaczenia!").queue()
-            }
         } else {
             channel.sendMessage("Wiadomość nie możę być pusta!").queue()
         }

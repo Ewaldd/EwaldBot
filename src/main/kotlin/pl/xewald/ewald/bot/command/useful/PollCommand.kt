@@ -1,4 +1,4 @@
-package pl.xewald.ewald.bot.command.admin
+package pl.xewald.ewald.bot.command.useful
 
 import net.dv8tion.jda.core.EmbedBuilder
 import net.dv8tion.jda.core.entities.Member
@@ -13,7 +13,7 @@ import java.time.format.FormatStyle
 
 class PollCommand(val bot: EwaldBot) : Command(
         "ankieta",
-        CommandCategory.ADMIN,
+        CommandCategory.USEFUL,
         "Stwórz ankiete.",
         listOf("poll")
 ) {

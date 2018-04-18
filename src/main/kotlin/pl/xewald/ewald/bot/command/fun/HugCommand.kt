@@ -29,10 +29,10 @@ class HugCommand(val bot: EwaldBot) : Command(
             return
         }
         if (args.isNotEmpty()) {
-            if (message.mentionedUsers.isEmpty()) {
                 val rand = Random().nextInt(12)
                 val eb = EmbedBuilder()
-                eb.setTitle("${member.effectiveName} przytulił ${args.joinToString(" ")} \uD83D\uDC95")
+            eb.setAuthor("EwaldBot", null, "https://xewald.pl/Ewald.gif")
+                eb.setDescription("${member.effectiveName} przytulił ${args.joinToString(" ")} \uD83D\uDC95")
                 eb.setColor(member.color)
                 eb.setImage(
                         when (rand) {
@@ -52,9 +52,6 @@ class HugCommand(val bot: EwaldBot) : Command(
                 )
 
                 channel.sendMessage(eb.build()).queue()
-            } else {
-                channel.sendMessage("Wiadomość nie może posiadać oznaczenia!").queue()
-            }
         } else {
             channel.sendMessage("Wiadomość jest pusta!").queue()
         }

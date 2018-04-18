@@ -2,9 +2,7 @@ package pl.xewald.ewald.bot.command.game
 
 import khttp.get
 import net.dv8tion.jda.core.EmbedBuilder
-import net.dv8tion.jda.core.entities.Member
-import net.dv8tion.jda.core.entities.Message
-import net.dv8tion.jda.core.entities.MessageChannel
+import net.dv8tion.jda.core.entities.*
 import org.json.JSONObject
 import pl.xewald.ewald.bot.EwaldBot
 import pl.xewald.ewald.bot.command.Command
@@ -14,7 +12,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 import khttp.delete as httpDelete
-import java.util.Random;
+import java.util.Random
 
 class MCServerCommand(val bot: EwaldBot) : Command(
         "mcserwer",

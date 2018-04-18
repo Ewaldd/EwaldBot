@@ -9,7 +9,7 @@ import pl.xewald.ewald.bot.util.basicEmbedBuilder
 class HelpCommand(val bot: EwaldBot) : Command(
         "help",
         CommandCategory.BOT,
-        "Pomoc.",
+        "Pomoc",
         listOf("pomoc")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {

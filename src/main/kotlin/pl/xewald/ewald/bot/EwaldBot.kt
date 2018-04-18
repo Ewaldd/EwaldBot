@@ -6,7 +6,7 @@ import net.dv8tion.jda.core.JDABuilder
 import net.dv8tion.jda.core.OnlineStatus
 import net.dv8tion.jda.core.entities.Game
 import pl.xewald.ewald.bot.command.admin.BroadcastCommand
-import pl.xewald.ewald.bot.command.admin.PollCommand
+import pl.xewald.ewald.bot.command.useful.PollCommand
 import pl.xewald.ewald.bot.command.bot.BotCommand
 import pl.xewald.ewald.bot.command.bot.HelpCommand
 import pl.xewald.ewald.bot.command.game.*
@@ -59,7 +59,6 @@ class EwaldBot(val config: EwaldBotConfig) {
         commandManager.add(HitCommand(this))
         commandManager.add(AvatarCommand(this))
         commandManager.add(RPSCommand(this))
-        commandManager.add(WeatherCommand(this))
         commandManager.add(PollCommand(this))
         commandManager.add(CryptocurrencyCommand(this))
         running = true

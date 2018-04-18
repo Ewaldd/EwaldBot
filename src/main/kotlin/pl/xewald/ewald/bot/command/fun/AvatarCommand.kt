@@ -12,7 +12,7 @@ import khttp.delete as httpDelete
 class AvatarCommand(val bot: EwaldBot) : Command(
         "avatar",
         CommandCategory.FUN,
-        "Sprawdź informacje o serwerze",
+        "Wyświetla awatar podanej osoby",
         listOf("awatar")
 ) {
     override fun execute(member: Member?, channel: MessageChannel, message: Message, args: Array<String>) {
