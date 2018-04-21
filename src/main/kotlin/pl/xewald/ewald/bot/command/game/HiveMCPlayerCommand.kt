@@ -12,7 +12,6 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 import khttp.delete as httpDelete
-
 class HiveMCPlayerCommand(val bot: EwaldBot) : Command(
         "hivemc",
         CommandCategory.GAME,

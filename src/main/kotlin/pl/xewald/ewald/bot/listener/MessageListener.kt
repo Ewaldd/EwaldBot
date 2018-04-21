@@ -1,9 +1,14 @@
 package pl.xewald.ewald.bot.listener
 
 import kotlinx.coroutines.experimental.async
+import net.dv8tion.jda.core.EmbedBuilder
+import net.dv8tion.jda.core.entities.Guild
+import net.dv8tion.jda.core.events.message.MessageDeleteEvent
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent
+import net.dv8tion.jda.core.events.message.guild.GuildMessageDeleteEvent
 import net.dv8tion.jda.core.hooks.ListenerAdapter
 import pl.xewald.ewald.bot.EwaldBot
+
 
 class MessageListener(val bot: EwaldBot) : ListenerAdapter() {
 
@@ -21,5 +26,6 @@ class MessageListener(val bot: EwaldBot) : ListenerAdapter() {
             command!!.execute(event.member, event.channel, event.message, args)
         }
     }
+
 
 }

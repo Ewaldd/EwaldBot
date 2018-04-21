@@ -14,8 +14,7 @@ import pl.xewald.ewald.bot.command.CommandManager
 import pl.xewald.ewald.bot.command.`fun`.*
 import pl.xewald.ewald.bot.command.useful.*
 import pl.xewald.ewald.bot.config.EwaldBotConfig
-import pl.xewald.ewald.bot.listener.JoinListener
-import pl.xewald.ewald.bot.listener.MessageListener
+import pl.xewald.ewald.bot.listener.*
 import pl.xewald.ewald.bot.util.EwaldBotException
 
 class EwaldBot(val config: EwaldBotConfig) {
@@ -37,6 +36,9 @@ class EwaldBot(val config: EwaldBotConfig) {
         jda = JDABuilder(AccountType.BOT)
                 .setToken(token)
                 .addEventListener(JoinListener(this))
+                .addEventListener(LeaveListener(this))
+                .addEventListener(GuildListener(this))
+                .addEventListener(BanListener(this))
                 .addEventListener(MessageListener(this))
                 .setAudioEnabled(false)
                 .setAutoReconnect(true)
